@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CS2340 SpendWise Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    header {
+        padding: 20px;
+        background: #fff;
+        border-bottom: 2px solid #000;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        margin-right: 20px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background: #fff;
+    }
+
+    section {
+        margin-bottom: 60px;
+    }
+
+    .section-header {
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #000;
+    }
+
+    .hero {
+        margin-bottom: 60px;
+        padding-bottom: 20px;
+        border-bottom: 3px solid #000;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .card {
+        margin-bottom: 30px;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .card h5 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    ul li {
+        padding: 5px 0;
+        padding-left: 20px;
+    }
+
+    ul li::before {
+        content: "• ";
+        margin-left: -20px;
+        margin-right: 10px;
+    }
+
+    .screen-showcase {
+        margin-bottom: 30px;
+    }
+
+    .screen-item {
+        margin-bottom: 30px;
+    }
+
+    .screen-item img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+        border: 1px solid #000;
+    }
+
+    .diagram-grid {
+        margin-top: 20px;
+    }
+
+    .diagram-item {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .diagram-item img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin: 10px auto;
+        display: block;
+        border: 1px solid #000;
+    }
+
+    a {
+        color: #00f;
+        text-decoration: underline;
+    }
+
+    @media(max-width: 768px){
+        header { 
+            padding: 15px; 
+        }
+        nav { 
+            display: block; 
+        }
+        nav a { 
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 5px;
+        }
+        .wrapper { 
+            padding: 20px 15px; 
+        }
+        .hero h1 { 
+            font-size: 2rem; 
+        }
+        .screen-item img,
+        .diagram-item img {
+            max-width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SpendWise</div>
+    <nav>
+        <a href="#intro">Intro</a>
+        <a href="#design">Design</a>
+        <a href="#ui">UI</a>
+        <a href="#func">Functionality</a>
+        <a href="#reflect">Reflections</a>
+        <a href="#team">Team</a>
+    </nav>
+</header>
+
+<div class="wrapper">
+
+    <div class="hero">
+        <h1>SpendWise</h1>
+        <p>CS2340 Project | Team 18</p>
+    </div>
+
+    <section id="intro">
+        <div class="section-header">Introduction</div>
+        <div class="card">
+            <h3>Project Overview</h3>
+            <p>
+                SpendWise is a project for my CS2340 class. It is a mobile app that focuses on simplifying the travel itineraries by allowing easy creation and management of solo and group travel itineraries. This app is perfect for those who are tired of unorganized trips and messy excel sheets! SpendWise simplifies the process, and allows users to live in the moment. The app uses Java, as well as Android Studio. For the database, we implemented Firebase in order to take advantage of Firestore and its realtime database, as well as its authentication features to allow for login/logout features. Furthermore, the app utilizes Ollama in order to power its AI ChatBot. The entire project took most of the semester to build, and was built using the agile methodology, as we split the project into 5 distinct sprints. 
+            </p>
+        </div>
+    </section>
+
+    <section id="design">
+        <div class="section-header">Design & Architecture</div>
+
+        <div class="card">
+            <h3>Architecture</h3>
+            <p>
+                For our architecture, we utilized the MVVM architecture to ensure clean separation in our code. MVVM helped us keep our data, UI, and business logic independent from each other. The Model is responsible for the data and main application logic, the View is responsible for everything the user sees, and the ViewModel sits in between, kind of acting as a middle-man between the View and Model. This separation made our codebase easier to test, reduced duplication, and allowed us to update UI behavior without touching the underlying logic. We also used the Strategy pattern for weekly and monthly budgeting periods and a Factory pattern for producing charts.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>System Diagrams</h3>
+            <div class="diagram-grid">
+                <div class="diagram-item">
+                    <h5>Design Class Diagram</h5>
+                    <img src="DCD.png" alt="Design Class Diagram">
+                </div>
+                <div class="diagram-item">
+                    <h5>Sequence Diagram 1</h5>
+                    <img src="SD1.png" alt="Sequence Diagram 1">
+                </div>
+                <div class="diagram-item">
+                    <h5>Sequence Diagram 2</h5>
+                    <img src="SD2.png" alt="Sequence Diagram 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ui">
+        <div class="section-header">User Interface</div>
+
+        <div class="card">
+            <h3>Visual Tour</h3>
+            <p>
+                Below is a guided tour through the key screens of SpendWise.
+            </p>
+
+            <div class="screen-showcase">
+                <div class="screen-item">
+                    <h4>Dashboard</h4>
+                    <img src="Dashboard.png" alt="Dashboard">
+                    <p>
+                        The central hub displays an overview of expenses and budgets at a glance. It uses graphs and charts to visualize this data.
+                    </p>
+                </div>
+
+                <div class="screen-item">
+                    <h4>Expense Log</h4>
+                    <img src="Expenses.png" alt="Expenses">
+                    <p>
+                        Track all expenses with category tags, timestamps, and participant information.
+                    </p>
+                </div>
+
+                <div class="screen-item">
+                    <h4>Budget Management</h4>
+                    <img src="Budgets.png" alt="Budgets">
+                    <p>
+                        Set and monitor budgets along with group saving goals. 
+                    </p>
+                </div>
+
+                <div class="screen-item">
+                    <h4>Savings Circle</h4>
+                    <img src="Savings_Circle.png" alt="Savings Circle">
+                    <p>
+                        A screen that showcases all the different group saving circles currently active.
+                    </p>
+                </div>
+
+                <div class="screen-item">
+                    <h4>AI Chatbot Assistant</h4>
+                    <img src="Chatbot.png" alt="Chatbot">
+                    <p>
+                        An AI-powered assistant that provides the user with relevant and useful information regarding their budget, expenses, etc.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+        
+            <h4>Design Consistency</h4>
+            <p>
+                We maintained visual consistency throughout the app by establishing a unified design system. All screens share the same colors, fonts, and overall styling.
+            </p>
+
+            <h4>Theming</h4>
+            <p>
+                We have both light and dark modes to accommodate different user preferences. 
+            </p>
+
+            <h4>Navigation</h4>
+            <p>
+                User navigation utilizes a bottom navigation bar for primary features and a top app bar for some other actions like logging out or changing the date. The navigation structure is very minimal to minimize actions needed to reach any feature.
+            </p>
+
+            <h4>Components</h4>
+            <p>
+                We used reusable components (cards, buttons, input fields, charts) that maintain consistent behavior and appearance across screens. 
+            </p>
+        </div>
+    </section>
+
+    <section id="func">
+        <div class="section-header">Functionality</div>
+
+        <div class="card">
+            <h3>Main Features</h3>
+            <ul>
+                <li>Create and join groups</li>
+                <li>Log expenses with categories</li>
+                <li>Track budgets in real-time</li>
+                <li>Create and join group savings circles</li>
+                <li>AI assistant</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Video Demo</h3>
+            <p>Watch the demo: <a href="https://youtu.be/acC7wI2yxYo">Demo</a></p>
+        </div>
+    </section>
+
+    <section id="reflect">
+        <div class="section-header">Reflections & Conclusions</div>
+        <div class="card">
+            <p>
+                Overall, this project was a fun and enriching opportunity. I learned how to effectively use Git in a multi-person workflow and became very comfortable with MVVM architecture. Furthermore, I learned a lot about how to applying design patterns like the strategy and factory pattern in real-world coding environments. I think this is a very useful skill that will come in handle in the future as I enter the job market. Even though one teammate was out with COVID, our team adapted and pushed through. Furthermore, we had a hard time coordinating times to actually meet in-person, so it was a bit hard to coordinate everything purely through text, but we were able to make it work in the end! I contributed to the UI, group creation functionality, AI chatbot features, dark mode, and several other smaller features.
+            </p>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="section-header">Contributors</div>
+        <p>Huge thanks to Isabelle, Jayden, Alexis, and Murtaza for helping build the project!</p>
+    </section>
+
+</div>
+
+</body>
+</html>
